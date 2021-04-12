@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown {
+  @apply text-lg text-gray-800 leading-normal;
+  & > * + *, & li > p + p {
+    @apply mt-6;
+  }
+  & li + li {
+    @apply mt-2;
+  }
+  & strong {
+    @apply text-black font-bold;
+  }
+  & a {
+    @apply text-black font-semibold;
+  }
+  & strong a {
+    @apply font-bold;
+  }
+  & h1 {
+    @apply leading-tight text-4xl font-semibold text-black mb-2 mt-10;
+  }
+  & h2 {
+    @apply leading-tight text-2xl font-semibold text-black mb-2 mt-10;
+  }
+  & h3 {
+    @apply leading-tight text-xl font-semibold text-black mt-8 -mb-2;
+  }
+  & blockquote {
+    @apply border-l-4 border-gray-200 pl-4 italic;
+  }
+  & ul, & ol {
+    @apply list-outside list-disc;
+
+    & li {
+      @apply ml-6 pl-2;
+    }
+  }
+}

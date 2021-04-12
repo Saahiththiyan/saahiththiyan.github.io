@@ -21,21 +21,29 @@
               >Saahiththiyan Mathivathanan</a
             >
             <div
-              class="hidden md:flex mt-3 lg:mt-4 uppercase tracking-widest text-xs spaced-x-6"
+              class="md:flex mt-3 lg:mt-4 uppercase tracking-widest text-xs spaced-x-6"
             >
               <a
-                v-for="page in pages"
-                :key="page.id"
-                href=""
+                href="/articles"
                 class="text-gray-400 font-semibold no-underline hover:text-black mr-6"
-                >{{ page.name }}</a
+                >Articles</a
+              >
+              <a
+                href="/projects"
+                class="text-gray-400 font-semibold no-underline hover:text-black mr-6"
+                >Projects</a
+              >
+              <a
+                href="/journal"
+                class="text-gray-400 font-semibold no-underline hover:text-black mr-6"
+                >Journal</a
               >
             </div>
           </div>
         </div>
       </div>
       <div class="lg:pl-32 mt-12">
-        <div class="max-w-md">
+        <div class="max-w-2xl">
           <slot></slot>
         </div>
       </div>
@@ -43,32 +51,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      pages: {
-        articles: {
-          id: 1,
-          name: "Articles",
-          link: "/articles",
-        },
-        projects: {
-          id: 2,
-          name: "Projects",
-          link: "/projects",
-        },
-        journal: {
-          id: 2,
-          name: "Journal",
-          link: "/journal",
-        },
-      },
-    };
-  },
-};
-</script>
-
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+}
+</static-query>
 
 <style>
 </style>
